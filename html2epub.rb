@@ -17,7 +17,11 @@ class Html2epub < Formula
     system bundle, "install", "--without", "test"
 
 
-    bin.install "main.rb" => "html2epub"
+    (bin/"html2epub").write <<~EOS
+      #!/bin/bash
+      GEM_HOME=#{libexec} BUNDLE_GEMFILE=#{libexec}/Gemfile \
+        exec #{bundle} exec ruby #{libexec}/main.rb "$@"
+    EOS
   end
 
 end
