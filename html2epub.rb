@@ -1,8 +1,8 @@
 class Html2epub < Formula
   desc "html2epub"
   homepage "https://github.com/jwhitehorn/html2epub"
-  url "https://github.com/jwhitehorn/html2epub/archive/9d3c4ab9db0a0cb21660076b9b250ed57a5dd091.tar.gz"
-  sha256 "fe897255d32ae99e8770b0c0f93da50e77ef75f8dae73b48955f812e14445769"
+  url "https://github.com/jwhitehorn/html2epub/archive/b2f9b6c2b4e2c2120c84e7f58e7c54dc0a629ad8.tar.gz"
+  sha256 "8c563681c41ddc801a9970a4745c58252afeb3645d511e71e2ce98fc3ebc4afd"
 
   depends_on 'bundler' => :ruby
 
