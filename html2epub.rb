@@ -9,9 +9,14 @@ class Html2epub < Formula
   def install
     libexec.install Dir["*"]
 
-    ENV["GEM_HOME"] = buildpath/"gem_home"
+    ENV["GEM_HOME"] = libexec
+    ENV["BUNDLE_PATH"] = libexec
+    ENV["BUNDLE_GEMFILE"] = libexec/"Gemfile"
     system "gem", "install", "bundler"
-    system "bundle", "install"
+    bundle = Dir["#{libexec}/**/bundle"].last
+    system bundle, "install", "--without", "test"
+
+
     bin.install "main.rb" => "html2epub"
   end
 
